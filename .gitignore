@@ -1,0 +1,30 @@
+# Java
+*.class
+
+# Maven
+target/
+.mvn/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+
+# Spring configuration containing secrets
+Backend/code-snippet-manager/src/main/resources/application.properties
+Backend/code-snippet-manager/src/main/resources/*.secret.*
+
+Backend/code-snippet-manager.zip

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code Snippet Manager</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                💻 Code Snippet Manager
+            </a>
+
+        </div>
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container mt-5">
+
+        <!-- Page Heading -->
+
+        <div class="text-center mb-4">
+
+            <h1>My Code Snippets</h1>
+
+            <p class="text-muted">
+                Store and manage your useful code snippets.
+            </p>
+
+        </div>
+
+
+        <!-- ================= ADD SNIPPET FORM ================= -->
+
+        <div class="card shadow-sm mb-4">
+
+            <div class="card-header">
+                <h5 class="mb-0">Add New Snippet</h5>
+            </div>
+
+            <div class="card-body">
+
+                <form id="snippetForm">
+
+                    <!-- Snippet Title -->
+
+                    <div class="mb-3">
+
+                        <label for="snippetTitle" class="form-label">
+                            Snippet Title
+                        </label>
+
+                        <input type="text" class="form-control" id="snippetTitle" placeholder="Example: Java ArrayList">
+
+                        <div id="titleError" class="text-danger mt-1"></div>
+                    </div>
+
+
+                    <!-- Programming Language -->
+
+                    <div class="mb-3">
+
+                        <label for="snippetLanguage" class="form-label">
+                            Programming Language
+                        </label>
+
+                        <select class="form-select" id="snippetLanguage">
+
+                            <option value="">Select Language</option>
+                            <option value="Java">Java</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="SQL">SQL</option>
+
+                        </select>
+
+                        <div id="languageError" class="text-danger mt-1"></div>
+                    </div>
+
+
+                    <!-- Code -->
+
+                    <div class="mb-3">
+
+                        <label for="snippetCode" class="form-label">
+                            Code
+                        </label>
+
+                        <textarea class="form-control" id="snippetCode" rows="6"
+                            placeholder="Write your code here..."></textarea>
+
+                        <div id="codeError" class="text-danger mt-1"></div>
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <button type="submit" class="btn btn-primary" id="submitButton">
+                        Add Snippet
+                    </button>
+
+                    <button type="reset" class="btn btn-secondary">
+                        Clear
+                    </button>
+
+                </form>
+                <div id="message" class="mt-4"></div>
+            </div>
+        </div>
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="mb-4">
+
+            <label for="searchInput" class="form-label">
+                Search Snippets
+            </label>
+
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by title or language...">
+            <div class="col-md-4 mt-3">
+                <select id="languageFilter" class="form-select">
+                    <option value="">All Languages</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="SQL">SQL</option>
+                </select>
+            </div>
+        </div>
+
+
+        <!-- ================= SNIPPETS ================= -->
+
+        <section>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                <h3 class="mb-0">
+                    Saved Snippets
+                </h3>
+
+                <span class="badge bg-secondary" id="snippetCount">
+                    0 Snippets
+                </span>
+
+            </div>
+            <div id="snippetContainer" class="row"></div>
+        </section>
+
+    </main>
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Custom JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
