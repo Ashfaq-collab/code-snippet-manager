@@ -187,7 +187,7 @@ function addSnippetToPage(snippet) {
     
         <div class="col-md-6 mb-4">
 
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm savedsnippets">
 
                 <div class="card-body">
 
@@ -199,7 +199,7 @@ function addSnippetToPage(snippet) {
                         ${snippet.language}
                     </span>
 
-                    <pre class="bg-light p-3 rounded"><code>${snippet.code}</code></pre>
+                    <pre class="bg-light p-3 rounded text-black"><code>${snippet.code}</code></pre>
                     
                     <button class="btn btn-warning btn-sm me-2" onclick="editSnippet(${snippet.id})">
                     Edit
@@ -299,24 +299,6 @@ async function deleteSnippet(id) {
     }
 }
 
-// searchInput.addEventListener("input", function () {
-
-//     const searchText = searchInput.value.toLowerCase();
-
-
-//     const filteredSnippets = snippets.filter(function (snippet) {
-
-//         return (
-//             snippet.title.toLowerCase().includes(searchText) ||
-//             snippet.language.toLowerCase().includes(searchText)
-//         );
-
-//     });
-
-
-//     renderSnippets(filteredSnippets);
-
-// });
 function filterSnippets() {
 
     const searchText = searchInput.value.toLowerCase();

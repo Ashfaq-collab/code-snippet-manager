@@ -12,6 +12,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,15 +35,15 @@
 
     <!-- ================= MAIN CONTENT ================= -->
 
-    <main class="container mt-5">
+    <main class="container mt-5 main">
 
         <!-- Page Heading -->
 
         <div class="text-center mb-4">
 
-            <h1>My Code Snippets</h1>
+            <h1 class="text-white">My Code Snippets</h1>
 
-            <p class="text-muted">
+            <p class="text-white">
                 Store and manage your useful code snippets.
             </p>
 
@@ -48,7 +52,7 @@
 
         <!-- ================= ADD SNIPPET FORM ================= -->
 
-        <div class="card shadow-sm mb-4">
+        <div class="card shadow-sm mb-4 addSnippet">
 
             <div class="card-header">
                 <h5 class="mb-0">Add New Snippet</h5>
@@ -66,7 +70,7 @@
                             Snippet Title
                         </label>
 
-                        <input type="text" class="form-control" id="snippetTitle" placeholder="Example: Java ArrayList">
+                        <input type="text" class="title" id="snippetTitle" placeholder="Example: Java ArrayList">
 
                         <div id="titleError" class="text-danger mt-1"></div>
                     </div>
@@ -82,12 +86,12 @@
 
                         <select class="form-select" id="snippetLanguage">
 
-                            <option value="">Select Language</option>
-                            <option value="Java">Java</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="HTML">HTML</option>
-                            <option value="CSS">CSS</option>
-                            <option value="SQL">SQL</option>
+                            <option value="" class="text-black">Select Language</option>
+                            <option value="Java" class="text-black">Java</option>
+                            <option value="JavaScript" class="text-black">JavaScript</option>
+                            <option value="HTML" class="text-black">HTML</option>
+                            <option value="CSS" class="text-black">CSS</option>
+                            <option value="SQL" class="text-black">SQL</option>
 
                         </select>
 
@@ -103,7 +107,7 @@
                             Code
                         </label>
 
-                        <textarea class="form-control" id="snippetCode" rows="6"
+                        <textarea class="title" id="snippetCode" rows="6"
                             placeholder="Write your code here..."></textarea>
 
                         <div id="codeError" class="text-danger mt-1"></div>
@@ -116,7 +120,7 @@
                         Add Snippet
                     </button>
 
-                    <button type="reset" class="btn btn-secondary">
+                    <button type="reset" class="btn btn-danger">
                         Clear
                     </button>
 
@@ -133,16 +137,15 @@
             <label for="searchInput" class="form-label">
                 Search Snippets
             </label>
-
-            <input type="text" class="form-control" id="searchInput" placeholder="Search by title or language...">
+            <input type="text" class="title" id="searchInput" placeholder="Search by title or language...">
             <div class="col-md-4 mt-3">
                 <select id="languageFilter" class="form-select">
-                    <option value="">All Languages</option>
-                    <option value="Java">Java</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="SQL">SQL</option>
+                    <option value="" class="text-black">All Languages</option>
+                    <option value="Java" class="text-black">Java</option>
+                    <option value="JavaScript" class="text-black">JavaScript</option>
+                    <option value="HTML" class="text-black">HTML</option>
+                    <option value="CSS" class="text-black">CSS</option>
+                    <option value="SQL" class="text-black">SQL</option>
                 </select>
             </div>
         </div>
@@ -157,7 +160,7 @@
                     Saved Snippets
                 </h3>
 
-                <span class="badge bg-secondary" id="snippetCount">
+                <span class="badge bg-dark" id="snippetCount">
                     0 Snippets
                 </span>
 
