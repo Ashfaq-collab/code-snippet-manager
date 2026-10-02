@@ -200,6 +200,10 @@ function addSnippetToPage(snippet) {
                     </span>
 
                     <pre class="bg-light p-3 rounded text-black"><code>${snippet.code}</code></pre>
+
+                    <button class="btn btn-primary btn-sm me-2" onclick="copyCode(${snippet.id})"> 
+                    📋 Copy Code 
+                    </button>
                     
                     <button class="btn btn-warning btn-sm me-2" onclick="editSnippet(${snippet.id})">
                     Edit
@@ -260,10 +264,33 @@ function renderSnippets(snippetsToRender = snippets) {
     });
 }
 
+renderSnippets();
 
 // Load saved snippets when page opens
+async function copyCode(id) {
 
-renderSnippets();
+    const snippet = snippets.find(function (snippet) {
+        return snippet.id === id;
+    });
+
+    if (!snippet) {
+        return;
+    }
+
+    try {
+
+        await navigator.clipboard.writeText(snippet.code);
+
+        showMessage("Code copied successfully! 📋", "success");
+
+    } catch (error) {
+
+        console.error("Error copying code:", error);
+
+        showMessage("Failed to copy code.", "danger");
+
+    }
+}
 
 async function deleteSnippet(id) {
     const confirmed = confirm("Are you sure you want to delete this snippet?");
