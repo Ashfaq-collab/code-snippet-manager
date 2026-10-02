@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/snippets";
+const API_URL = "https://code-snippet-manager-bwdd.onrender.com/api/snippets";
 
 let snippets = [];
 
